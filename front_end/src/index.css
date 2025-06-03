@@ -1,0 +1,156 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 213 94% 68%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 14% 96%;
+    --sidebar-foreground: 213 31% 15%;
+    --sidebar-primary: 213 94% 68%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 213 31% 15%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 213 94% 68%;
+
+    /* Custom financial theme colors */
+    --navy: 213 31% 15%;
+    --navy-light: 213 20% 25%;
+    --navy-dark: 213 40% 10%;
+    --blue-accent: 213 94% 68%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+  }
+
+  .dark {
+    --background: 213 31% 15%;
+    --foreground: 210 40% 98%;
+
+    --card: 213 31% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 213 31% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 213 94% 68%;
+    --primary-foreground: 213 31% 15%;
+
+    --secondary: 213 20% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 213 20% 25%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 213 20% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 213 20% 25%;
+    --input: 213 20% 25%;
+    --ring: 213 94% 68%;
+
+    --sidebar-background: 213 31% 15%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 213 94% 68%;
+    --sidebar-primary-foreground: 213 31% 15%;
+    --sidebar-accent: 213 20% 25%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 213 20% 25%;
+    --sidebar-ring: 213 94% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .navy {
+    color: hsl(var(--navy));
+  }
+  
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+  
+  .border-navy {
+    border-color: hsl(var(--navy));
+  }
+  
+  .text-navy {
+    color: hsl(var(--navy));
+  }
+  
+  .bg-blue-accent {
+    background-color: hsl(var(--blue-accent));
+  }
+  
+  .text-blue-accent {
+    color: hsl(var(--blue-accent));
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
